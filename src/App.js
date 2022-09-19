@@ -90,10 +90,10 @@ function App() {
         // if ()
         const index = Object.values(stock['Symbol']).indexOf(search.toUpperCase())
         if (stockArray.includes(search.toUpperCase()) || etfArray.includes(search.toUpperCase())) {
-            fetch(`https://api.tdameritrade.com/v1/marketdata/${search.toUpperCase()}/quotes?apikey=SF9AX6HDID13OPBKOPEBRPG9DDCOHAAU`)
+            fetch(`https://api.tdameritrade.com/v1/marketdata/${search.toUpperCase()}/quotes?apikey={token}`)
                 .then(res => res.json())
                 .then(data => setGeneralSearchData({...data[search.toUpperCase()], company: Object.values(stock['Company Name'])[index], industry: Object.values(stock['Industry'])[index]})) // setGeneralSearchData(data[search.toUpperCase()])
-            fetch(`https://api.tdameritrade.com/v1/instruments?apikey=PSHTVYVGEH2HMKPAYNIKC0AC6H1OK21E&symbol=${search.toUpperCase()}&projection=fundamental`)
+            fetch(`https://api.tdameritrade.com/v1/instruments?apikey={token}&symbol=${search.toUpperCase()}&projection=fundamental`)
                 .then(res => res.json())
                 .then(data => setFundamentalSearchData(data[search.toUpperCase()]['fundamental']))
             if (stockArray.includes(search.toUpperCase())) {
@@ -163,7 +163,7 @@ function App() {
 
 export default App;
 
-// https://stocknewsapi.com/api/v1?tickers=AAPL,MSFT,GOOG,GOOGL,AMZN,TSLA,UNH,META,JNJ,V,NVDA,XOM,WMT,PG,JPM,MA,HD,CVX,PFE,KO,BAC,PEP,BABA,COST,TM,ORCL,ADBE,DIS,MCD,SHEL,VZ,CSCO,TMUS,NKE,UPS,CMCSA,WFC,AMD,MS,INTC,CVS,T,LOW,BX,IBM,GS,PYPL,BLK,NFLX,C&sources=Barrons,Benzinga,Business+Insider,CNBC,CNN+Business,Forbes,Fox+Business,NYTimes,The+Guardian&items=20&page=1&token=u89ccdgescdxbhrpfdpfcgopdhsn97pjykkl8wnd
+// https://stocknewsapi.com/api/v1?tickers=AAPL,MSFT,GOOG,GOOGL,AMZN,TSLA,UNH,META,JNJ,V,NVDA,XOM,WMT,PG,JPM,MA,HD,CVX,PFE,KO,BAC,PEP,BABA,COST,TM,ORCL,ADBE,DIS,MCD,SHEL,VZ,CSCO,TMUS,NKE,UPS,CMCSA,WFC,AMD,MS,INTC,CVS,T,LOW,BX,IBM,GS,PYPL,BLK,NFLX,C&sources=Barrons,Benzinga,Business+Insider,CNBC,CNN+Business,Forbes,Fox+Business,NYTimes,The+Guardian&items=20&page=1&token={token}
 
 // &sector=Basic+Materials Basic Materials
 // &sector=Conglomerates Conglomerates
