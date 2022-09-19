@@ -1,0 +1,146 @@
+:root {
+    --darkGray: rgba(20, 21, 25, .8);
+    --newsTextColor: #FFFFFF
+}
+
+.news-container {
+    width: 80%;
+    margin: 1em auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: var(--darkGray);
+    margin-top: 0;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: .25em;
+}
+
+/* Typography */
+
+.feature-source, .news-source {
+    margin-right: .5em;
+    font-weight: 300;
+}
+
+.feature-card *, .news-card *{
+    color: var(--newsTextColor)
+}
+
+.news-time {
+    font-weight: 400;
+
+}
+
+.feature-source {
+    font-size: 1.5rem;
+}
+
+.feature-time {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.feature-title {
+    font-size: 1.75rem;
+}
+
+.feature-time,
+.feature-source,
+.news-time,
+.news-source {
+    margin-top: 0;
+}
+
+.feature-title. .news-title {
+
+}
+
+.feature-text {
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+/* Structure */
+
+
+.feature-card {
+    width: 100%;
+}
+
+.news-card {
+    width: 44%;
+}
+
+.news-card, .feature-card {
+    display: flex;
+    justify-content: space-between;
+    background: var(--darkGray);
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin-bottom: 1em;
+    transition: .2s;
+}
+
+.news-card:hover, .feature-card:hover {
+    background: rgba(20, 21, 25);
+}
+
+.news-card:active, .feature-card:active {
+    background: rgb(41, 43, 51);
+}
+
+.news-card-body, .feature-card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-main {
+
+}
+
+.news-header, .feature-header {
+    display: flex;
+}
+
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: baseline;
+}
+
+.percent-change {
+    margin: 0;
+    font-weight: 300;
+}
+
+.card-footer *, .feature-footer *{
+    margin-bottom: 0;
+}
+
+.feature-ticker, .news-ticker {
+    margin: 0;
+    font-weight: 300;
+    margin-right: .5em;
+}
+
+.feature-img {
+    height: 200px;
+    width: 350px;
+}
+
+.news-img {
+    height: 150px;
+    width: 250px;
+}
+
+.news-img, .feature-img {
+    border-radius: 15px;
+    object-fit: cover;
+    margin-left: 2.5rem;
+}

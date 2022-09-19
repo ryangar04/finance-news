@@ -1,0 +1,140 @@
+.stock-container {
+    width: 700px;
+    padding: 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: var(--darkGray);
+    border-radius: 15px;
+}
+
+.stock-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.stock-company, .stock-price {
+    margin-top: 0;
+}
+
+.stock-price {
+    margin-bottom: 0;
+}
+
+.stock-company {
+    margin-bottom: .15em;
+}
+
+.stock-change, .stock-pct {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: .25em;
+}
+
+.stock-change {
+    margin-right: .5em;
+}
+
+.stock-head-metric {
+    display: flex;
+}
+
+.stock-statistics {
+    display: flex;
+    flex-direction: column;
+}
+
+.stock-section-header {
+    margin-top: 0;
+    margin-bottom: .5em;
+}
+
+.stock-statistics-row {
+    display: flex;
+    width: 700px;
+}
+
+.stock-statistics-row-metric {
+    width: 25%;
+}
+
+/*.stock-statistics-row-metric:hover {*/
+/*    background: rgba(255, 255, 255, .2)*/
+/*}*/
+
+.stock-statistics-metric-title {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: .5em;
+}
+
+.stock-statistics-metric {
+    margin-top: 0;
+}
+
+.stock-trends-analysis {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Stock Page News */
+
+.stock-page-news {
+
+}
+
+.stock-page-news-card {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 30px;
+    background: var(--darkGray);
+    border-radius: 15px;
+    margin-top: 1em;
+    transition: .5s;
+}
+
+.stock-page-news-card:hover {
+    background: rgb(20, 21, 25, .1);
+
+}
+
+.stock-page-news-card:active {
+    background: rgb(41, 43, 51)
+}
+
+.stock-page-news-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stock-page-news-source {
+    margin-top: 0;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.stock-page-news-title {
+    color: #FFFFFF;
+}
+
+.stock-page-news-sentiment {
+    margin: 0;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.stock-page-news-img {
+    width: 200px;
+    height: 125px;
+    margin-left: 30px;
+    border-radius: 15px;
+}
+
+/* Buttons */
+
+
+
