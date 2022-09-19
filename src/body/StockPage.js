@@ -64,7 +64,7 @@ function StockPage(prop) {
         if (prop.holiday) {
             let start
             let end
-            fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey=PSHTVYVGEH2HMKPAYNIKC0AC6H1OK21E&periodType=day&period=1&frequencyType=minute&frequency=1&needExtendedHoursData=true`)
+            fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey={token}&periodType=day&period=1&frequencyType=minute&frequency=1&needExtendedHoursData=true`)
                 .then(res => res.json())
                 .then(data => {
                     start = data.candles[0].datetime - 86400000
@@ -77,7 +77,7 @@ function StockPage(prop) {
                         }
                     }))
                 })
-            fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey=PSHTVYVGEH2HMKPAYNIKC0AC6H1OK21E&frequencyType=minute&frequency=1&endDate=${end}&startDate=${start}&needExtendedHoursData=true`)
+            fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey={token}&frequencyType=minute&frequency=1&endDate=${end}&startDate=${start}&needExtendedHoursData=true`)
                 .then(res => res.json())
                 .then(data => {
                     setPercentChange((historicalData[historicalData.length - 1].close / data.candles[data.candles.length - 1].close).toFixed(2))
@@ -89,7 +89,7 @@ function StockPage(prop) {
             const start = parseInt(prop.general.regularMarketTradeTimeInLong.toString().slice(0, -3)) - 23400 + '000'
             const end = prop.general.regularMarketTradeTimeInLong.toString().slice(0, -3) + '000'
             console.log(start, end)
-            fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey=PSHTVYVGEH2HMKPAYNIKC0AC6H1OK21E&frequencyType=minute&frequency=1&endDate=${end}&startDate=${start}&needExtendedHoursData=true`)
+            fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey={token}&frequencyType=minute&frequency=1&endDate=${end}&startDate=${start}&needExtendedHoursData=true`)
                 .then(res => res.json())
                 .then(data => setHistoricalData(data.candles.map(interval => {
                     return {
@@ -105,7 +105,7 @@ function StockPage(prop) {
     //     const start = parseInt(prop.general.regularMarketTradeTimeInLong.toString().slice(0, -3)) - 23400 + '000'
     //     const end = prop.general.regularMarketTradeTimeInLong.toString().slice(0, -3) + '000'
     //     console.log(start, end)
-    //     fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey=PSHTVYVGEH2HMKPAYNIKC0AC6H1OK21E&frequencyType=minute&frequency=1&endDate=${end}&startDate=${start}&needExtendedHoursData=false`)
+    //     fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey={token}&frequencyType=minute&frequency=1&endDate=${end}&startDate=${start}&needExtendedHoursData=false`)
     //         .then(res => res.json())
     //         .then(data => setHistoricalData(data.candles.map(interval => {
     //             return {
@@ -117,7 +117,7 @@ function StockPage(prop) {
     // }, [prop.searches])
 
     useEffect(() => {
-        fetch(`https://stocknewsapi.com/api/v1?tickers=${prop.ticker}&items=50&page=1&token=wk05m5apjaiqsdxny8hlcuwyzarjnftryhgeq8n8`)
+        fetch(`https://stocknewsapi.com/api/v1?tickers=${prop.ticker}&items=50&page=1&token={token}`)
             .then(res => res.json())
             .then(data => setStockNews(data.data))
     }, [prop.searches])
@@ -137,7 +137,7 @@ function StockPage(prop) {
             if (prop.holiday) {
                 let start
                 let end
-                fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey=PSHTVYVGEH2HMKPAYNIKC0AC6H1OK21E&periodType=day&period=1&frequencyType=minute&frequency=1&needExtendedHoursData=true`)
+                fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey={token}&periodType=day&period=1&frequencyType=minute&frequency=1&needExtendedHoursData=true`)
                     .then(res => res.json())
                     .then(data => {
                         start = data.candles[0].datetime - 86400000
@@ -150,7 +150,7 @@ function StockPage(prop) {
                             }
                         }))
                     })
-                fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey=PSHTVYVGEH2HMKPAYNIKC0AC6H1OK21E&frequencyType=minute&frequency=1&endDate=${end}&startDate=${start}&needExtendedHoursData=true`)
+                fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey={token}&frequencyType=minute&frequency=1&endDate=${end}&startDate=${start}&needExtendedHoursData=true`)
                     .then(res => res.json())
                     .then(data => {
                         setPercentChange((historicalData[historicalData.length - 1].close / data.candles[data.candles.length - 1].close).toFixed(2))
@@ -162,7 +162,7 @@ function StockPage(prop) {
                 const start = parseInt(prop.general.regularMarketTradeTimeInLong.toString().slice(0, -3)) - 23400 + '000'
                 const end = prop.general.regularMarketTradeTimeInLong.toString().slice(0, -3) + '000'
                 console.log(start, end)
-                fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey=PSHTVYVGEH2HMKPAYNIKC0AC6H1OK21E&frequencyType=minute&frequency=1&endDate=${end}&startDate=${start}&needExtendedHoursData=true`)
+                fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey={token}&frequencyType=minute&frequency=1&endDate=${end}&startDate=${start}&needExtendedHoursData=true`)
                     .then(res => res.json())
                     .then(data => setHistoricalData(data.candles.map(interval => {
                         return {
@@ -173,7 +173,7 @@ function StockPage(prop) {
                     })))
             }
         } else {
-            fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey=PSHTVYVGEH2HMKPAYNIKC0AC6H1OK21E&periodType=${periodType}&period=${period}&frequencyType=${frequencyType}&frequency=${frequency}&needExtendedHoursData=false`)
+            fetch(`https://api.tdameritrade.com/v1/marketdata/${prop.ticker}/pricehistory?apikey={token}&periodType=${periodType}&period=${period}&frequencyType=${frequencyType}&frequency=${frequency}&needExtendedHoursData=false`)
                 .then(res => res.json())
                 .then(data => {
                     setHistoricalData(data.candles.map(interval => {
